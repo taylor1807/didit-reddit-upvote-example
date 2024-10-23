@@ -12,13 +12,13 @@ export async function CommentList({ postId, parentCommentId = null }) {
     commentArgs.push(parentCommentId);
   }
   const comments = await db.query(commentQuery, commentArgs);
-
+  //corrected the img to be Image instead
   return (
     <ul className="ml-4">
       {comments.rows.map((comment) => (
         <li key={comment.id} className="pt-2">
           <div className="flex space-x-3 items-center pb-2">
-            <img
+            <Image
               src={comment.image}
               alt={comment.name}
               width={32}

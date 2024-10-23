@@ -17,6 +17,7 @@ export async function generateMetadata({ params }) {
 
   return {
     title: `${post.title}`,
+    description: "A social app like Reddit or Hacker News",
   };
 }
 

@@ -56,7 +56,17 @@ export async function Vote({ postId, votes }) {
     "use server";
     await handleVote(session?.user?.id, postId, -1);
   }
-
+  //added to display a message if user is not logged in
+  if (!session) {
+    return (
+      <p className="text-red-500">
+        Please Log in to vote.
+        <br />
+        Thank You
+      </p>
+    );
+  }
+  //removed commented out code to make more readable
   return (
     <>
       <form className="flex items-center space-x-3 pl-3">
@@ -66,41 +76,6 @@ export async function Vote({ postId, votes }) {
           votes={votes}
           existingVote={existingVote}
         />
-        {/* <button formAction={upvote}>
-          {existingVote?.vote === 1 ? (
-            <TbArrowBigUpFilled
-              size={24}
-              className={clsx("hover:text-orange-600", {
-                "text-pink-300": existingVote?.vote === 1,
-              })}
-            />
-          ) : (
-            <TbArrowBigUp
-              size={24}
-              className={clsx("hover:text-orange-600", {
-                "text-pink-300": existingVote?.vote === 1,
-              })}
-            />
-          )}
-        </button>
-        <span className="w-6 text-center tabular-nums">{votes}</span>
-        <button formAction={downvote}>
-          {existingVote?.vote === -1 ? (
-            <TbArrowBigDownFilled
-              size={24}
-              className={clsx("hover:text-blue-600", {
-                "text-blue-300": existingVote?.vote === -1,
-              })}
-            />
-          ) : (
-            <TbArrowBigDown
-              size={24}
-              className={clsx("hover:text-blue-600", {
-                "text-blue-300": existingVote?.vote === -1,
-              })}
-            />
-          )}
-        </button> */}
       </form>
     </>
   );
