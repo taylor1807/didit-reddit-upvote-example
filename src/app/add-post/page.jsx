@@ -5,6 +5,11 @@ import { redirect } from "next/navigation";
 import { LoginButton } from "@/components/LoginButton";
 import { LogoutButton } from "@/components/LogoutButton";
 
+export const metadata = {
+  title: "Add New Post",
+  description: "A social app like Reddit or Hacker News",
+};
+
 export default async function Home() {
   const session = await auth();
 
