@@ -56,16 +56,16 @@ export async function Vote({ postId, votes }) {
     "use server";
     await handleVote(session?.user?.id, postId, -1);
   }
-  //added to display a message if user is not logged in
-  if (!session) {
-    return (
-      <p className="text-red-500">
-        Please Log in to vote.
-        <br />
-        Thank You
-      </p>
-    );
-  }
+  //added to display a message if user is not logged in this can be used to conditionally render instead of using an error.jsx page
+  // if (!session) {
+  //   return (
+  //     <p className="text-red-500">
+  //       Please Log in to vote.
+  //       <br />
+  //       Thank You
+  //     </p>
+  //   );
+  // }
   //removed commented out code to make more readable
   return (
     <>
