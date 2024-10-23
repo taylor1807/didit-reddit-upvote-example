@@ -1,3 +1,11 @@
+in this project, deployment was pretty straightforward, i did have to watch the video a couple of times to make sure i did it correctly, but it worked afterwards.
+
+i managed to create metaData to display the title of the post in the tab dynamically, the handling of error when voting when not logged was completed 2 ways depending on which way prefered, i have a error.jsx page, also if you would prefer i have commented out in vote.jsx to conditionly render wether the user is logged in or not.
+
+i also spotted a couple of other errors which i have sorted, the img tag in commentList.jsx should of been Image instead as it was being imported in and not used. also i found a section of commented out code which was moved to a component so i removed it as it was no longer needed.
+
+i did start to look at TipTap as it looked straightforward enough but time escaped me so it has been installed and not used.
+
 ## Upvote
 
 Upvote is a Reddit-esque web application that allows users to create posts, upvote and downvote posts, and comment on posts in a multi-threaded, nested list.
